@@ -7,13 +7,17 @@ Visual Elements
 
 | Element | UI States | UI Modifiers |
 |---------|----------|-------------|
-| wrapper | fadeIn, ready, fadeOut | success, info, warn, error  |
+| wrapper | fadeIn, latest, preceding, fadeOut | success, info, warn, error  |
 | statusIcon | ready | success, info, warn, error |
 | title | ready | success, info, warn, error |
 | message | ready | success, info, warn, error |
 | closeIcon | ready | success, info, warn, error, successHover, infoHover, warnHover, errorHover |
 | linkOne | ready | success, info, warn, error, successHover, infoHover, warnHover, errorHover |
 | linkTwo | ready | success, info, warn, error, successHover, infoHover, warnHover, errorHover |
+
+
+Note that the **wrapper** has some special UI States. The Animation flow starts with  `fadeIn` and transitions after a short time to `latest`. If there was an element before, that was in UI State `latest` it will be transitioned to `preceding`.
+On close the UI State changes tp `fadeOut` before the component is destroyed
 
 
 Box Elements
