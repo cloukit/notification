@@ -1,0 +1,126 @@
+<!--
+  * @license MIT
+  * Copyright (c) 2017 Bernhard Grünewaldt - codeclou.io
+  * https://github.com/cloukit/legal
+-->
+<svg width="705" height="678" viewBox="0 0 705 678" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background:#FFFFFF">
+  <title>
+    cloukit-notification-decomposed
+  </title>
+  <defs>
+    <style type="text/css">@import url(https://cloukit.github.io/cdn-static/css/webfonts.css);</style>
+    <path id="a" d="M0 0h300v141H0z"/>
+    <path id="b" d="M188 413h334v169H188z"/>
+    <path id="c" d="M205 427h300v141H205z"/>
+    <path id="d" d="M216 441h41v116h-41z"/>
+    <path id="e" d="M452 441h41v116h-41z"/>
+    <path id="f" d="M264 441h181v116H264z"/>
+    <path id="g" d="M272 523h165v25H272z"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <path stroke="#777" d="M15.5 17.33h676V662.5h-676z"/>
+    <text transform="translate(38 35)" font-size="30" font-family="SourceSansPro-Light, Source Sans Pro" letter-spacing=".333" fill="#710ECC" font-weight="300">
+      <tspan x="0" y="30">Notification Component decomposed</tspan>
+    </text>
+    <g transform="translate(205 161)">
+      <use fill="#FFF" xlink:href="#a"/>
+      <path stroke="#0E2CA9" d="M.5.5h299v140H.5z"/>
+      <circle fill="#0E2CA9" cx="26.5" cy="27.5" r="10.5"/>
+      <text font-family="SourceSansPro-Regular, Source Sans Pro" font-size="18" letter-spacing=".333" fill="#333">
+        <tspan x="56" y="32">Something happened!</tspan>
+      </text>
+      <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="18" font-weight="300" letter-spacing=".333" fill="#333">
+        <tspan x="56" y="65">That something indicates</tspan> <tspan x="56" y="88">something else in particular.</tspan>
+      </text>
+      <g fill="#333">
+        <path d="M285.45 18.43l2.12 2.12-12.02 12.02-2.12-2.12z"/>
+        <path d="M275.55 18.43l-2.12 2.12 12.02 12.02 2.12-2.12z"/>
+      </g>
+      <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="18" font-weight="300" letter-spacing=".333">
+        <tspan x="56" y="121" fill="#4667F0">Tell me more</tspan> <tspan x="154.554" y="121" fill="#0E2CA9"> </tspan>
+      </text>
+      <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="18" font-weight="300" letter-spacing=".333" fill="#4667F0">
+        <tspan x="191" y="122">Ok</tspan>
+      </text>
+    </g>
+    <path d="M261.5 284.5h98" stroke="#4667F0" stroke-linecap="square"/>
+    <path d="M230.216 194.996v-8.928h2.646v8.928h-2.646zm1.314-10.242c-.444 0-.81-.13-1.098-.387-.288-.258-.432-.59-.432-1 0-.407.144-.737.432-.99.288-.25.654-.377 1.098-.377.456 0 .825.126 1.107.378.282.252.423.582.423.99 0 .408-.14.74-.423 1-.282.257-.65.386-1.107.386z" fill="#FFF"/>
+    <path d="M215.5 187.5h-57" stroke="#710ECC" opacity=".2" stroke-linecap="square"/>
+    <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="20" font-weight="300" letter-spacing=".333" fill="#777">
+      <tspan x="65" y="193">statusIcon</tspan>
+    </text>
+    <path d="M211.5 246.5h-68" stroke="#710ECC" opacity=".2" stroke-linecap="square"/>
+    <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="20" font-weight="300" letter-spacing=".333" fill="#777">
+      <tspan x="65" y="252">wrapper</tspan>
+    </text>
+    <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="20" font-weight="300" letter-spacing=".333" fill="#777">
+      <tspan x="567" y="192">closeIcon</tspan>
+    </text>
+    <path d="M497.5 186.5h60" stroke="#710ECC" opacity=".2" stroke-linecap="square"/>
+    <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="20" font-weight="300" letter-spacing=".333" fill="#777">
+      <tspan x="567" y="252">message</tspan>
+    </text>
+    <path d="M484.5 245.5h75" stroke="#710ECC" opacity=".2" stroke-linecap="square"/>
+    <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="20" font-weight="300" letter-spacing=".333" fill="#777">
+      <tspan x="233" y="350">linkOne</tspan>
+    </text>
+    <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="20" font-weight="300" letter-spacing=".333" fill="#777">
+      <tspan x="407" y="350">linkTwo</tspan>
+    </text>
+    <path d="M408.5 290.5l19 36M289.5 291.5l-20 38" stroke="#710ECC" opacity=".2" stroke-linecap="square"/>
+    <path d="M345 309h-12c-.6 0-1-.4-1-1 0-1.5-.7-2.4-1.8-3.8-.6-.7-1.3-1.6-2-2.7-1.9-3-3.6-6.6-4-7.9-.4-1.3-.1-2.2.3-2.7.4-.6 1.2-.9 2.1-.9 1.2 0 2.4 1 3.5 2.3V282c0-1.7 1.3-3 3-3s3 1.3 3 3v4.2c.3-.1.6-.2 1-.2 1.1 0 2 .6 2.5 1.4.4-.3.9-.4 1.4-.4 1.4 0 2.5.9 2.9 2.2.3-.1.7-.2 1.1-.2 1.7 0 3 1.3 3 3v3c0 2.6-.5 4.7-1 6.7s-1 3.9-1 6.3c0 .6-.4 1-1 1z" fill="#FFF"/>
+    <path d="M345 309h-12c-.6 0-1-.4-1-1 0-1.5-.7-2.4-1.8-3.8-.6-.7-1.3-1.6-2-2.7-1.9-3-3.6-6.6-4-7.9-.4-1.3-.1-2.2.3-2.7.4-.6 1.2-.9 2.1-.9 1.2 0 2.4 1 3.5 2.3V282c0-1.7 1.3-3 3-3s3 1.3 3 3v4.2c.3-.1.6-.2 1-.2 1.1 0 2 .6 2.5 1.4.4-.3.9-.4 1.4-.4 1.4 0 2.5.9 2.9 2.2.3-.1.7-.2 1.1-.2 1.7 0 3 1.3 3 3v3c0 2.6-.5 4.7-1 6.7s-1 3.9-1 6.3c0 .6-.4 1-1 1zm-11.1-2H344c.1-2.2.6-4 1-5.8.5-2 1-3.9 1-6.2v-3c0-.6-.4-1-1-1s-1 .4-1 1v1c0 .6-.4 1-1 1s-1-.4-1-1v-3c0-.6-.4-1-1-1s-1 .4-1 1v2c0 .6-.4 1-1 1s-1-.4-1-1v-3c0-.6-.4-1-1-1s-1 .4-1 1v2c0 .6-.4 1-1 1s-1-.4-1-1v-9c0-.6-.4-1-1-1s-1 .4-1 1v15c0 .6-.4 1-1 1s-1-.4-1-1v-.8c-.9-2.3-2.8-4.2-3.5-4.2-.2 0-.4 0-.5.1-.1.1-.1.4 0 .9.3 1.1 1.8 4.3 3.8 7.5.6 1 1.2 1.7 1.8 2.5 1.1 1.2 2.1 2.3 2.3 4z" fill="#797979" fill-rule="nonzero"/>
+    <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="20" font-weight="300" letter-spacing=".333" fill="#777">
+      <tspan x="232" y="133">title</tspan>
+    </text>
+    <path d="M287.5 170.5l-31-30" stroke="#710ECC" opacity=".2" stroke-linecap="square"/>
+    <g transform="matrix(-1 0 0 1 710 0)">
+      <use fill="#FFF" xlink:href="#b"/>
+      <path stroke-opacity=".28" stroke="#710ECC" d="M188.5 413.5h333v168h-333z"/>
+    </g>
+    <use fill="#FFF" xlink:href="#c"/>
+    <path stroke="#710ECC" d="M205.5 427.5h299v140h-299z"/>
+    <use fill="#FFF" xlink:href="#d"/>
+    <path stroke="#710ECC" d="M216.5 441.5h40v115h-40z"/>
+    <use fill="#FFF" xlink:href="#e"/>
+    <path stroke="#710ECC" d="M452.5 441.5h40v115h-40z"/>
+    <g transform="matrix(-1 0 0 1 709 0)">
+      <use fill="#FFF" xlink:href="#f"/>
+      <path stroke="#710ECC" d="M264.5 441.5h180v115h-180z"/>
+    </g>
+    <g transform="matrix(-1 0 0 1 709 0)">
+      <use fill="#FFF" xlink:href="#g"/>
+      <path stroke="#710ECC" d="M272.5 523.5h164v24h-164z"/>
+    </g>
+    <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="20" font-weight="300" letter-spacing=".333" fill="#710ECC">
+      <tspan x="38" y="127">Elements</tspan>
+    </text>
+    <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="20" font-weight="300" letter-spacing=".333" fill="#710ECC">
+      <tspan x="38" y="392">Box Elements</tspan>
+    </text>
+    <path d="M191.5 555.5h-66" stroke="#710ECC" opacity=".2" stroke-linecap="square"/>
+    <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="20" font-weight="300" letter-spacing=".333" fill="#777">
+      <tspan x="66" y="561">outlet</tspan>
+    </text>
+    <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="20" font-weight="300" letter-spacing=".333" fill="#777">
+      <tspan x="65" y="508">wrapper</tspan>
+    </text>
+    <path d="M209.5 502.5h-66" stroke="#710ECC" opacity=".2" stroke-linecap="square"/>
+    <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="20" font-weight="300" letter-spacing=".333" fill="#777">
+      <tspan x="65" y="455">left</tspan>
+    </text>
+    <path d="M220.5 449.5h-123" stroke="#710ECC" opacity=".2" stroke-linecap="square"/>
+    <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="20" font-weight="300" letter-spacing=".333" fill="#777">
+      <tspan x="567" y="455">right</tspan>
+    </text>
+    <path d="M486.5 448.5h75" stroke="#710ECC" opacity=".2" stroke-linecap="square"/>
+    <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="20" font-weight="300" letter-spacing=".333" fill="#777">
+      <tspan x="252" y="628">center</tspan>
+    </text>
+    <path d="M312.5 552.5l-30 55" stroke="#710ECC" opacity=".2" stroke-linecap="square"/>
+    <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="20" font-weight="300" letter-spacing=".333" fill="#777">
+      <tspan x="401" y="629">links</tspan>
+    </text>
+    <path d="M385.5 542.5l31 63" stroke="#710ECC" opacity=".2" stroke-linecap="square"/>
+  </g>
+</svg>
