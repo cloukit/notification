@@ -20,11 +20,11 @@ Box Elements
 
 | Element | UI States | UI Modifiers |
 |---------|----------|-------------|
-| outlet | normal | base |
-| left | normal | base |
-| right | normal | base |
-| center | normal | base |
-| links | normal | base |
+| outlet | ready | base |
+| left | ready | base |
+| right | ready | base |
+| center | ready | base |
+| links | ready | base |
 
 
 Below you can see the theme provided by notification. You can easily extend one of the existing themes and change it to your needs. But do not forget to register it at the [`cloukitThemeService`](https://cloukit.github.io/#/guide/themeing).
