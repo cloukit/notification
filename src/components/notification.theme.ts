@@ -21,40 +21,39 @@ export class CloukitNotificationComponentThemeDefault extends CloukitComponentTh
     //
     this.createStyle('outlet', 'ready', 'base', {
       style: {
-        border: `1px solid red;`,
         width: '430px',
         zIndex: 9999,
         color: '#333',
-        marginLeft: '40px',
-        marginBottom: '40px',
         position: 'fixed',
       }
     } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition);
 
     this.createStyle('left', 'ready', 'base', {
       style: {
-        border: `1px solid red;`,
-
+        width: '30px',
+        maxWidth: '30px',
+        flex: 1,
       }
     } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition);
 
     this.createStyle('right', 'ready', 'base', {
       style: {
-        border: `1px solid red;`,
+        width: '22px',
+        maxWidth: '22px',
+        flex: 1,
       }
     } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition);
 
     this.createStyle('center', 'ready', 'base', {
       style: {
-        border: `1px solid #ccc;`,
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'column',
+        flex: 3,
       }
     } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition);
 
     this.createStyle('links', 'ready', 'base', {
       style: {
-        border: `1px solid red;`,
       }
     } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition);
 
@@ -82,6 +81,7 @@ export class CloukitNotificationComponentThemeDefault extends CloukitComponentTh
         style: {
           opacity: 1,
           margin: '10px 10px 10px 10px',
+          transform: 'translateX(0) translateY(0)',
         }
       } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
     this.createStyle('wrapper', 'ready', 'latestPlusOne',
@@ -90,7 +90,6 @@ export class CloukitNotificationComponentThemeDefault extends CloukitComponentTh
           opacity: 1,
           margin: '10px 10px 10px 10px',
           transform: 'translateX(0) translateY(100%) translateY(20px)',
-          boxShadow: '0',
         }
       } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
     this.createStyle('wrapper', 'ready', 'latestPlusN',
@@ -99,7 +98,6 @@ export class CloukitNotificationComponentThemeDefault extends CloukitComponentTh
           opacity: 1,
           margin: '10px 10px 10px 10px',
           transform: 'translateX(0) translateY(200%) translateY(40px)',
-          boxShadow: '0',
         }
       } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
     this.createStyle('wrapper', 'fadeOut', 'latest',
@@ -115,33 +113,35 @@ export class CloukitNotificationComponentThemeDefault extends CloukitComponentTh
     //
     this.createStyle('notification', 'ready', 'base', {
       style: {
-        border: '1px solid green',
         backgroundColor: '#fff',
         padding: '10px',
+        display: 'flex',
+        flexDirection: 'row',
+        width: '100%',
       }
     } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition);
     this.createStyle('notification', 'ready', 'success',
       this.merge(this.getStyle('notification', 'ready', 'base'), {
         style: {
-          border: '1px solid blue',
+          border: '1px solid #52C416',
         }
       } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
     this.createStyle('notification', 'ready', 'info',
       this.merge(this.getStyle('notification', 'ready', 'base'), {
         style: {
-          border: '1px solid blue',
+          border: '1px solid #005FFF',
         }
       } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
     this.createStyle('notification', 'ready', 'warn',
       this.merge(this.getStyle('notification', 'ready', 'base'), {
         style: {
-          border: '1px solid orange',
+          border: '1px solid #E77B12',
         }
       } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
     this.createStyle('notification', 'ready', 'error',
       this.merge(this.getStyle('notification', 'ready', 'base'), {
         style: {
-          border: '1px solid red',
+          border: '1px solid #C41616',
         }
       } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
 
@@ -210,52 +210,232 @@ export class CloukitNotificationComponentThemeDefault extends CloukitComponentTh
     this.createStyle('closeIcon', 'ready', 'base', {
       style: {
         width: '20px',
+        cursor: 'pointer',
+        userSelect: 'none',
       },
       icon: {
         svgPathD: CloukitIcons.cross,
         svgStyle: {
           width: '20px',
+          fill: '#333',
         }
       }
     } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition);
     this.createStyle('closeIcon', 'ready', 'success',
       this.merge(this.getStyle('closeIcon', 'ready', 'base'), {
-        style: {
-        },
-        icon: {
-          svgStyle: {
-            fill: 'green',
-          }
-        }
       } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
     this.createStyle('closeIcon', 'ready', 'info',
       this.merge(this.getStyle('closeIcon', 'ready', 'base'), {
-        style: {
-        },
-        icon: {
-          svgStyle: {
-            fill: 'green',
-          }
-        }
       } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
     this.createStyle('closeIcon', 'ready', 'warn',
       this.merge(this.getStyle('closeIcon', 'ready', 'base'), {
-        style: {
-        },
-        icon: {
-          svgStyle: {
-            fill: 'green',
-          }
-        }
       } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
     this.createStyle('closeIcon', 'ready', 'error',
       this.merge(this.getStyle('closeIcon', 'ready', 'base'), {
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('closeIcon', 'ready', 'successHover',
+      this.merge(this.getStyle('closeIcon', 'ready', 'success'), {
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('closeIcon', 'ready', 'infoHover',
+      this.merge(this.getStyle('closeIcon', 'ready', 'info'), {
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('closeIcon', 'ready', 'warnHover',
+      this.merge(this.getStyle('closeIcon', 'ready', 'warn'), {
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('closeIcon', 'ready', 'errorHover',
+      this.merge(this.getStyle('closeIcon', 'ready', 'error'), {
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+
+    //
+    // title
+    //
+    this.createStyle('title', 'ready', 'base', {
+      style: {
+        fontWeight: 700,
+        color: '#333',
+        marginBottom: '10px',
+      }
+    } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition);
+    this.createStyle('title', 'ready', 'success',
+      this.merge(this.getStyle('title', 'ready', 'base'), {
         style: {
-        },
-        icon: {
-          svgStyle: {
-            fill: 'green',
-          }
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('title', 'ready', 'info',
+      this.merge(this.getStyle('title', 'ready', 'base'), {
+        style: {
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('title', 'ready', 'warn',
+      this.merge(this.getStyle('title', 'ready', 'base'), {
+        style: {
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('title', 'ready', 'error',
+      this.merge(this.getStyle('title', 'ready', 'base'), {
+        style: {
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+
+    //
+    // message
+    //
+    this.createStyle('message', 'ready', 'base', {
+      style: {
+        fontWeight: 400,
+        color: '#333',
+        marginBottom: '10px',
+      }
+    } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition);
+    this.createStyle('message', 'ready', 'success',
+      this.merge(this.getStyle('message', 'ready', 'base'), {
+        style: {
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('message', 'ready', 'info',
+      this.merge(this.getStyle('message', 'ready', 'base'), {
+        style: {
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('message', 'ready', 'warn',
+      this.merge(this.getStyle('message', 'ready', 'base'), {
+        style: {
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('message', 'ready', 'error',
+      this.merge(this.getStyle('message', 'ready', 'base'), {
+        style: {
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+
+    //
+    // linkOne
+    //
+    this.createStyle('linkOne', 'ready', 'base', {
+      style: {
+        outline: 0,
+        border: 0,
+        backgroundColor: 'transparent',
+        color: '#333',
+        textDecoration: 'none',
+        padding: 0,
+        fontSize: '1rem',
+        marginRight: '20px',
+        cursor: 'pointer',
+      }
+    } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition);
+    this.createStyle('linkOne', 'ready', 'success',
+      this.merge(this.getStyle('linkOne', 'ready', 'base'), {
+        style: {
+          color: '#52C416',
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('linkOne', 'ready', 'successHover',
+      this.merge(this.getStyle('linkOne', 'ready', 'success'), {
+        style: {
+          textDecoration: 'underline',
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('linkOne', 'ready', 'info',
+      this.merge(this.getStyle('linkOne', 'ready', 'base'), {
+        style: {
+          color: '#005FFF',
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('linkOne', 'ready', 'infoHover',
+      this.merge(this.getStyle('linkOne', 'ready', 'info'), {
+        style: {
+          textDecoration: 'underline',
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('linkOne', 'ready', 'warn',
+      this.merge(this.getStyle('linkOne', 'ready', 'base'), {
+        style: {
+          color: '#E77B12',
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('linkOne', 'ready', 'warnHover',
+      this.merge(this.getStyle('linkOne', 'ready', 'warn'), {
+        style: {
+          textDecoration: 'underline',
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('linkOne', 'ready', 'error',
+      this.merge(this.getStyle('linkOne', 'ready', 'base'), {
+        style: {
+          color: '#C41616',
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('linkOne', 'ready', 'errorHover',
+      this.merge(this.getStyle('linkOne', 'ready', 'error'), {
+        style: {
+          textDecoration: 'underline',
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+
+
+    //
+    // linkTwo
+    //
+    this.createStyle('linkTwo', 'ready', 'base', {
+      style: {
+        outline: 0,
+        border: 0,
+        backgroundColor: 'transparent',
+        color: '#333',
+        textDecoration: 'none',
+        padding: 0,
+        fontSize: '1rem',
+        marginRight: '20px',
+        cursor: 'pointer',
+      }
+    } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition);
+    this.createStyle('linkTwo', 'ready', 'success',
+      this.merge(this.getStyle('linkTwo', 'ready', 'base'), {
+        style: {
+          color: '#52C416',
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('linkTwo', 'ready', 'successHover',
+      this.merge(this.getStyle('linkTwo', 'ready', 'success'), {
+        style: {
+          textDecoration: 'underline',
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('linkTwo', 'ready', 'info',
+      this.merge(this.getStyle('linkTwo', 'ready', 'base'), {
+        style: {
+          color: '#005FFF',
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('linkTwo', 'ready', 'infoHover',
+      this.merge(this.getStyle('linkTwo', 'ready', 'info'), {
+        style: {
+          textDecoration: 'underline',
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('linkTwo', 'ready', 'warn',
+      this.merge(this.getStyle('linkTwo', 'ready', 'base'), {
+        style: {
+          color: '#E77B12',
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('linkTwo', 'ready', 'warnHover',
+      this.merge(this.getStyle('linkTwo', 'ready', 'warn'), {
+        style: {
+          textDecoration: 'underline',
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('linkTwo', 'ready', 'error',
+      this.merge(this.getStyle('linkTwo', 'ready', 'base'), {
+        style: {
+          color: '#C41616',
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('linkTwo', 'ready', 'errorHover',
+      this.merge(this.getStyle('linkTwo', 'ready', 'error'), {
+        style: {
+          textDecoration: 'underline',
         }
       } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
   }

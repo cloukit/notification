@@ -19,20 +19,18 @@ export class CloukitNotificationService {
 
   constructor(private dropoutService: CloukitDropoutService) {}
 
-  public setOutletTemplate(t: TemplateRef<string>) {
+  public setOutletTemplate(t: TemplateRef<string>, placement: string) {
     this.notificationOutlet = t;
-    this.initOutlet();
-  }
-
-  initOutlet() {
     const self = this;
     const dummyTriggerElement = document.createElement('div');
     const request = new DropoutComponentCreationRequest();
     request.triggerElement = dummyTriggerElement;
     request.template = self.notificationOutlet;
+    // FIXME: use placement
     request.placement = DropoutPlacement.FIX_BOTTOM_LEFT;
     request.zIndex = 300;
     const dropoutRef = self.dropoutService.requestDropoutCreation(request);
+    // FIXME: destroy
   }
 
   public addNotification(notification: CloukitNotification) {

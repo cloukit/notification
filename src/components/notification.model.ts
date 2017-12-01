@@ -3,6 +3,8 @@
  * Copyright (c) 2017 Bernhard Grünewaldt - codeclou.io
  * https://github.com/cloukit/legal
  */
+import { EventEmitter } from '@angular/core';
+
 export class CloukitNotification {
   constructor(public title: string,
               public message: string,
@@ -18,5 +20,6 @@ export enum CloukitNotificationType {
 }
 
 export class CloukitNotificationLink {
-  constructor(public title: string, public href: string) {}
+  constructor(public title: string,
+              public event: EventEmitter<void>) {}
 }

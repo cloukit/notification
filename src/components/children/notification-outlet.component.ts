@@ -15,10 +15,10 @@ import {
 @Component({
   selector: 'cloukit-notification-outlet',
   template: `
- <div [ngStyle]="getStyle('outlet').style">
+ <div [ngStyle]="getOutletStyle().style">
    <cloukit-notification
-     *ngFor="let noti of notifications; let i = index"
-     [notification]="noti"
+     *ngFor="let notification of notifications; let i = index"
+     [notification]="notification"
      [themeSelected]="themeSelected"
      [index]="i"
      (close)="doClose($event)"
@@ -30,34 +30,43 @@ import {
 export class CloukitNotificationOutletComponent implements AfterContentInit, OnDestroy, OnInit {
 
   @Input()
-  public theme: string;
+  theme: string;
+
+  @Input()
+  offsetX: number;
+
+  @Input()
+  offsetY: number;
+
+  @Input()
+  placement: string;
 
   notifications: CloukitNotification[] = [];
   notificationsSubscription: Subscription;
 
   private themeSelected: CloukitComponentTheme;
-  private state = {
-    outlet: {
-      uiState: 'ready',
-      uiModifier: 'base',
-    },
-  };
 
   constructor(private cloukitNotificationService: CloukitNotificationService,
               private themeService: CloukitThemeService) {
     this.themeSelected = this.themeService.getComponentTheme('notification');
   }
 
-  getStyle(element: string): CloukitStatefulAndModifierAwareElementThemeStyleDefinition {
+  getOutletStyle(): CloukitStatefulAndModifierAwareElementThemeStyleDefinition {
     if (this.themeSelected !== undefined && this.themeSelected !== null) {
-      const style = this.themeSelected.getStyle(element, this.state[element].uiState, this.state[element].uiModifier);
+      const style = this.themeSelected.getStyle('outlet', 'ready', 'base');
+      if (this.placement === 'bottomLeft') {
+        // FIXME: more placements
+        style.style.left = `${this.offsetX}px`;
+        style.style.bottom = `${this.offsetY}px`;
+      }
       return this.themeService.prefixStyle(style);
     }
     return { style: {}, icon: {} } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition;
   }
 
   doClose(index: number) {
-    this.notifications = this.notifications.splice(index, 1)
+    console.log(index);
+    this.notifications.splice(index, 1)
   }
 
   ngOnInit() {

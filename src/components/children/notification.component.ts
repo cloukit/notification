@@ -28,7 +28,7 @@ import {
       </div>
       <div [ngStyle]="getStyle('center').style">
         <div [ngStyle]="getStyle('title').style">
-          {{index}} - {{this.state.wrapper.uiModifier}} - {{notification.title}}
+          {{notification.title}}
         </div>
         <div [ngStyle]="getStyle('message').style">
           {{notification.message}}
@@ -37,21 +37,29 @@ import {
           *ngIf="notification.linkOne || notification.linkTwo"
           [ngStyle]="getStyle('links').style"
         >
-          <a
+          <button
+            type="button"
             *ngIf="notification.linkOne"
             [ngStyle]="getStyle('linkOne').style"
-            [href]="notification.linkOne.title"
-          >{{notification.linkOne.title}}</a>
-          <a
+            (click)="notification.linkOne.event.emit()"
+            (mouseenter)="toggleHover('linkOne')"
+            (mouseleave)="toggleHover('linkOne')"
+          >{{notification.linkOne.title}}</button>
+          <button
+            type="button"
             *ngIf="notification.linkTwo"
             [ngStyle]="getStyle('linkTwo').style"
-            [href]="notification.linkTwo.title"
-          >{{notification.linkTwo.title}}</a>
+            (click)="notification.linkTwo.event.emit()"
+            (mouseenter)="toggleHover('linkTwo')"
+            (mouseleave)="toggleHover('linkTwo')"
+          >{{notification.linkTwo.title}}</button>
         </div>
       </div>
       <div [ngStyle]="getStyle('right').style">
         <svg
           (click)="doClose()"
+          (mouseenter)="toggleHover('closeIcon')"
+          (mouseleave)="toggleHover('closeIcon')"
           viewBox="0 0 512 512"
           [ngStyle]="getStyle('closeIcon').style"
         >
@@ -135,10 +143,22 @@ export class CloukitNotificationComponent implements OnInit, OnChanges {
     setTimeout(() => {
       self.state.wrapper.uiState = 'ready'
     }, 50);
+
+    const uiModifierByType = self.notificationTypeToUiModifier(self.notification.type);
+    self.state.statusIcon.uiModifier = uiModifierByType;
+    self.state.title.uiModifier = uiModifierByType;
+    self.state.notification.uiModifier = uiModifierByType;
+    self.state.message.uiModifier = uiModifierByType;
+    self.state.closeIcon.uiModifier = uiModifierByType;
+    self.state.linkOne.uiModifier = uiModifierByType;
+    self.state.linkTwo.uiModifier = uiModifierByType;
   }
 
   ngOnChanges() {
     const self = this;
+    if (self.index === 0) {
+      this.state.wrapper.uiModifier = 'latest';
+    }
     if (self.index !== 0) {
       this.state.wrapper.uiModifier = self.index === 1 ? 'latestPlusOne' : 'latestPlusN';
     }
@@ -153,6 +173,15 @@ export class CloukitNotificationComponent implements OnInit, OnChanges {
 
   public doClose() {
     this.close.emit(this.index);
+  }
+
+  public toggleHover(el: string) {
+    const modifier = this.state.title.uiModifier;
+    if (/^.*Hover$/.test(this.state[el].uiModifier)) {
+      this.state[el].uiModifier = `${modifier}`;
+    } else {
+      this.state[el].uiModifier = `${modifier}Hover`;
+    }
   }
 
   public getStyle(element: string): CloukitStatefulAndModifierAwareElementThemeStyleDefinition {

@@ -11,7 +11,14 @@ import { CloukitNotificationService } from '../services/notification.service';
  */
 @Component({
   selector: 'cloukit-notification-outlet-loader',
-  template: `<ng-template #notificationOutlet><cloukit-notification-outlet [theme]="theme"></cloukit-notification-outlet></ng-template>`,
+  template: `<ng-template #notificationOutlet>
+    <cloukit-notification-outlet
+      [theme]="theme"
+      [offsetX]="offsetX"
+      [offsetY]="offsetY"
+      [placement]="placement"
+    ></cloukit-notification-outlet>
+  </ng-template>`,
   styles: [],
 })
 export class CloukitNotificationOutletLoaderComponent implements AfterContentInit {
@@ -22,9 +29,18 @@ export class CloukitNotificationOutletLoaderComponent implements AfterContentIni
   @Input()
   theme: string;
 
+  @Input()
+  offsetX = 0; /* default */
+
+  @Input()
+  offsetY = 0; /* default */
+
+  @Input()
+  placement = 'bottomLeft'; /* default */
+
   constructor(private cloukitNotificationService: CloukitNotificationService) { }
 
   ngAfterContentInit() {
-    this.cloukitNotificationService.setOutletTemplate(this.notificationOutlet);
+    this.cloukitNotificationService.setOutletTemplate(this.notificationOutlet, this.placement);
   }
 }
