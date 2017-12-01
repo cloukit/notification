@@ -49,9 +49,9 @@
     <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="20" font-weight="300" letter-spacing=".333" fill="#777">
       <tspan x="65" y="193">statusIcon</tspan>
     </text>
-    <path d="M211.5 246.5h-68" stroke="#710ECC" opacity=".2" stroke-linecap="square"/>
+    <path d="M211.5 246.5h-40" stroke="#710ECC" opacity=".2" stroke-linecap="square"/>
     <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="20" font-weight="300" letter-spacing=".333" fill="#777">
-      <tspan x="65" y="252">wrapper</tspan>
+      <tspan x="65" y="252">notification</tspan>
     </text>
     <text font-family="SourceSansPro-Light, Source Sans Pro" font-size="20" font-weight="300" letter-spacing=".333" fill="#777">
       <tspan x="567" y="192">closeIcon</tspan>
