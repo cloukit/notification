@@ -7,7 +7,7 @@ Visual Elements
 
 | Element | UI States | UI Modifiers |
 |---------|----------|-------------|
-| wrapper | fadeIn, latest, preceding, fadeOut | success, info, warn, error  |
+| notification | ready | success, info, warn, error  |
 | statusIcon | ready | success, info, warn, error |
 | title | ready | success, info, warn, error |
 | message | ready | success, info, warn, error |
@@ -16,19 +16,20 @@ Visual Elements
 | linkTwo | ready | success, info, warn, error, successHover, infoHover, warnHover, errorHover |
 
 
-Note that the **wrapper** has some special UI States. The Animation flow starts with  `fadeIn` and transitions after a short time to `latest`. If there was an element before, that was in UI State `latest` it will be transitioned to `preceding`.
-On close the UI State changes tp `fadeOut` before the component is destroyed
-
-
 Box Elements
 
 | Element | UI States | UI Modifiers |
 |---------|----------|-------------|
+| wrapper | fadeIn, latest, preceding, fadeOut | base |
 | outlet | ready | base |
 | left | ready | base |
 | right | ready | base |
 | center | ready | base |
 | links | ready | base |
+
+Note that the **wrapper** has some special UI States. The Animation flow starts with  `fadeIn` and transitions after a short time to `latest`. If there was an element before, that was in UI State `latest` it will be transitioned to `preceding`.
+On close the UI State changes tp `fadeOut` before the component is destroyed
+
 
 
 Below you can see the theme provided by notification. You can easily extend one of the existing themes and change it to your needs. But do not forget to register it at the [`cloukitThemeService`](https://cloukit.github.io/#/guide/themeing).
