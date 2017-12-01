@@ -3,12 +3,19 @@ This graphic shows you all elements and how they are composed together. The Box 
 
 cloukitSvg:https://cloukit.github.io/notification/doc/cloukit-notification-decomposed.svg
 
+Elements
 
 | Element | UI States | UI Modifiers |
 |---------|----------|-------------|
 | statusIcon | fadeIn, ready, fadeOut | success, info, warn, error |
 | linkOne | fadeIn, ready, fadeOut | success, info, warn, error, successHover, infoHover, warnHover, errorHover |
 
+
+Box Elements
+
+| Element | UI States | UI Modifiers |
+|---------|----------|-------------|
+| outlet | normal | base |
 
 
 Below you can see the theme provided by notification. You can easily extend one of the existing themes and change it to your needs. But do not forget to register it at the [`cloukitThemeService`](https://cloukit.github.io/#/guide/themeing).
