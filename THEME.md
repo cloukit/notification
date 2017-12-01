@@ -8,12 +8,12 @@ Visual Elements
 | Element | UI States | UI Modifiers |
 |---------|----------|-------------|
 | wrapper | fadeIn, ready, fadeOut | success, info, warn, error  |
-| statusIcon | fadeIn, ready, fadeOut | success, info, warn, error |
-| title | fadeIn, ready, fadeOut | success, info, warn, error |
-| message | fadeIn, ready, fadeOut | success, info, warn, error |
-| closeIcon | fadeIn, ready, fadeOut | success, info, warn, error, successHover, infoHover, warnHover, errorHover |
-| linkOne | fadeIn, ready, fadeOut | success, info, warn, error, successHover, infoHover, warnHover, errorHover |
-| linkTwo | fadeIn, ready, fadeOut | success, info, warn, error, successHover, infoHover, warnHover, errorHover |
+| statusIcon | ready | success, info, warn, error |
+| title | ready | success, info, warn, error |
+| message | ready | success, info, warn, error |
+| closeIcon | ready | success, info, warn, error, successHover, infoHover, warnHover, errorHover |
+| linkOne | ready | success, info, warn, error, successHover, infoHover, warnHover, errorHover |
+| linkTwo | ready | success, info, warn, error, successHover, infoHover, warnHover, errorHover |
 
 
 Box Elements
