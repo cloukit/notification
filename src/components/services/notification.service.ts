@@ -8,6 +8,7 @@ import { CloukitDropoutService, DropoutComponentCreationRequest, DropoutPlacemen
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/take';
+import { CloukitNotification } from '../notification.model';
 
 @Injectable()
 export class CloukitNotificationService {
@@ -29,7 +30,7 @@ export class CloukitNotificationService {
     const request = new DropoutComponentCreationRequest();
     request.triggerElement = dummyTriggerElement;
     request.template = self.notificationOutlet;
-    request.placement = DropoutPlacement.FIX_BOTTOM_RIGHT;
+    request.placement = DropoutPlacement.FIX_BOTTOM_LEFT;
     request.zIndex = 300;
     const dropoutRef = self.dropoutService.requestDropoutCreation(request);
   }
@@ -37,7 +38,7 @@ export class CloukitNotificationService {
   public addNotification(notification: CloukitNotification) {
     this.notifications.take(1).subscribe(notifications => {
       this.notifications
-        .next(notifications.concat([notification]));
+        .next([notification].concat(notifications));
     });
   }
 
@@ -45,16 +46,4 @@ export class CloukitNotificationService {
     return this.notifications.asObservable();
   }
 
-}
-
-export class CloukitNotification {
-  constructor(public title: string,
-              public message: string,
-              public type: CloukitNotificationType) {}
-}
-export enum CloukitNotificationType {
-  INFO=1,
-  SUCCESS=2,
-  WARN=3,
-  ERROR=4,
 }

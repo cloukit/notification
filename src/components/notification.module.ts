@@ -10,18 +10,33 @@ import { CloukitDropoutModule } from '@cloukit/dropout';
 import { CloukitNotificationService } from './services/notification.service';
 import { CloukitNotificationOutletLoaderComponent } from './children/notification-outlet-loader.component';
 import { CloukitNotificationOutletComponent } from './children/notification-outlet.component';
+import { CloukitNotificationComponent } from './children/notification.component';
+import { CloukitNotificationComponentThemeDefault } from './notification.theme';
 
 @NgModule({
   imports: [ CommonModule, CloukitDropoutModule ],
-  exports: [ CloukitNotificationOutletLoaderComponent, CloukitNotificationOutletComponent ],
-  declarations: [ CloukitNotificationOutletLoaderComponent, CloukitNotificationOutletComponent ],
+  exports: [
+    CloukitNotificationOutletLoaderComponent,
+    CloukitNotificationOutletComponent,
+    CloukitNotificationComponent,
+  ],
+  declarations: [
+    CloukitNotificationOutletLoaderComponent,
+    CloukitNotificationOutletComponent,
+    CloukitNotificationComponent,
+  ],
   providers: [ CloukitNotificationService ],
-  entryComponents: [ CloukitNotificationOutletLoaderComponent, CloukitNotificationOutletComponent ],
+  entryComponents: [
+    CloukitNotificationOutletLoaderComponent,
+    CloukitNotificationOutletComponent,
+    CloukitNotificationComponent,
+  ],
 })
 export class CloukitNotificationModule {
   constructor(private themeService: CloukitThemeService) {
-    // if (this.themeService.getComponentTheme('tooltip') === null) {
-    //  this.themeService.registerComponentTheme('tooltip', new CloukitTooltipComponentThemeDefault());
-    // }
+    if (this.themeService.getComponentTheme('notification') === null) {
+      this.themeService.registerComponentTheme('notification',
+        new CloukitNotificationComponentThemeDefault());
+    }
   }
 }

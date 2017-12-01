@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { DemoComponent } from '../demo.component';
-import { CloukitNotificationService } from '../../index';
-import { CloukitNotification, CloukitNotificationType } from '../../components/services/notification.service';
+import {
+  CloukitNotificationService,
+  CloukitNotification,
+  CloukitNotificationType,
+  CloukitNotificationLink
+} from '../../index';
 
 @Component({
   selector: 'story-00-simple-notifications',
@@ -9,20 +13,21 @@ import { CloukitNotification, CloukitNotificationType } from '../../components/s
   styles: [].concat(DemoComponent.sharedStyles),
 })
 export class Story00Component {
-  counter = 0;
 
   dummyNotifications = [
-    new CloukitNotification('Atención', 'Los pantalones estan pequeños', CloukitNotificationType.WARN),
-    new CloukitNotification('Note', 'You should drink 2-3 liters a day', CloukitNotificationType.INFO),
-    new CloukitNotification('Warn', 'Sugar is unhealthy!', CloukitNotificationType.WARN),
-    new CloukitNotification('Info', 'Sport is healthy.', CloukitNotificationType.INFO),
-    new CloukitNotification('Success', 'You clicked a button!', CloukitNotificationType.SUCCESS),
+
   ];
 
   constructor(private notificationService: CloukitNotificationService) {}
 
   addNotification() {
-    const dummyNotification = this.dummyNotifications[this._randomInt(0, 4)];
+    const random = this._randomInt(0, 4);
+    let dummyNotification: CloukitNotification;
+    if (random === 0) dummyNotification = new CloukitNotification('Atención', 'Los pantalones estan pequeños', CloukitNotificationType.WARN, new CloukitNotificationLink('foo', 'bar'), null);
+    if (random === 1) dummyNotification = new CloukitNotification('Note', 'You should drink 2-3 liters a day', CloukitNotificationType.INFO, new CloukitNotificationLink('foo', 'bar'), null);
+    if (random === 2) dummyNotification = new CloukitNotification('Warn', 'Sugar is unhealthy!', CloukitNotificationType.WARN, new CloukitNotificationLink('foo', 'bar'), null);
+    if (random === 3) dummyNotification = new CloukitNotification('Info', 'Sport is healthy.', CloukitNotificationType.INFO, new CloukitNotificationLink('foo', 'bar'), null);
+    if (random === 4) dummyNotification = new CloukitNotification('Success', 'You clicked a button!', CloukitNotificationType.SUCCESS, new CloukitNotificationLink('foo', 'bar'), null);
     this.notificationService.addNotification(dummyNotification);
   }
 

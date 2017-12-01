@@ -18,7 +18,8 @@
     "test": "echo \"ok\""
   },
   "dependencies": {
-    "@cloukit/dropout": ">=@1.4.1-alpha.45",
+    "@cloukit/icon": ">=1.4.0",
+    "@cloukit/dropout": ">=1.4.0",
     "@cloukit/theme": ">=1.6.1"
   },
   "devDependencies": {
