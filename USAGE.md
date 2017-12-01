@@ -2,4 +2,5 @@ cloukitSvg:https://cloukit.github.io/notification/doc/cloukit-notification-decom
 
 | Element | UI States | UI Modifiers |
 |---------|----------|-------------|
-| statusIcon | fadeIn, ready, fadeOut | base |
+| statusIcon | fadeIn, ready, fadeOut | success, info, warn, error |
+| linkOne | fadeIn, ready, fadeOut | success, info, warn, error, successHover, infoHover, warnHover, errorHover |
