@@ -20,14 +20,14 @@ Box Elements
 
 | Element | UI States | UI Modifiers |
 |---------|----------|-------------|
-| wrapper | fadeIn, latest, preceding, fadeOut | base |
+| wrapper | fadeIn, ready, fadeOut | latest, preceding |
 | outlet | ready | base |
 | left | ready | base |
 | right | ready | base |
 | center | ready | base |
 | links | ready | base |
 
-Note that the **wrapper** has some special UI States. The Animation flow starts with  `fadeIn` and transitions after a short time to `latest`. If there was an element before, that was in UI State `latest` it will be transitioned to `preceding`.
+Note that the **wrapper** has some special UI States and Modifiers. The Animation flow starts with  `fadeIn` and transitions after a short time to `ready`.
 On close the UI State changes tp `fadeOut` before the component is destroyed
 
 
