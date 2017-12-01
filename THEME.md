@@ -7,7 +7,7 @@ Visual Elements
 
 | Element | UI States | UI Modifiers |
 |---------|----------|-------------|
-| wrapper | fadeIn, ready, fadeOut | base |
+| wrapper | fadeIn, ready, fadeOut | success, info, warn, error  |
 | statusIcon | fadeIn, ready, fadeOut | success, info, warn, error |
 | title | fadeIn, ready, fadeOut | success, info, warn, error |
 | message | fadeIn, ready, fadeOut | success, info, warn, error |
