@@ -3,10 +3,11 @@ This graphic shows you all elements and how they are composed together. The Box 
 
 cloukitSvg:https://cloukit.github.io/notification/doc/cloukit-notification-decomposed.svg
 
-Elements
+Visual Elements
 
 | Element | UI States | UI Modifiers |
 |---------|----------|-------------|
+| wrapper | fadeIn, ready, fadeOut | base |
 | statusIcon | fadeIn, ready, fadeOut | success, info, warn, error |
 | linkOne | fadeIn, ready, fadeOut | success, info, warn, error, successHover, infoHover, warnHover, errorHover |
 
@@ -16,7 +17,6 @@ Box Elements
 | Element | UI States | UI Modifiers |
 |---------|----------|-------------|
 | outlet | normal | base |
-| wrapper | fadeIn, ready, fadeOut | base |
 | left | normal | base |
 | right | normal | base |
 | center | normal | base |
