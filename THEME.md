@@ -21,7 +21,7 @@ Box Elements
 | Element | UI States | UI Modifiers |
 |---------|----------|-------------|
 | wrapper | fadeIn | latest |
-|         | ready | latest, preceding |
+|         | ready | latest, latestPlusOne, latestPlusN  |
 |         | fadeOut | latest |
 | outlet | ready | base |
 | left | ready | base |
