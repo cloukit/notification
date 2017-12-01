@@ -9,7 +9,11 @@ Visual Elements
 |---------|----------|-------------|
 | wrapper | fadeIn, ready, fadeOut | base |
 | statusIcon | fadeIn, ready, fadeOut | success, info, warn, error |
+| title | fadeIn, ready, fadeOut | success, info, warn, error |
+| message | fadeIn, ready, fadeOut | success, info, warn, error |
+| closeIcon | fadeIn, ready, fadeOut | success, info, warn, error, successHover, infoHover, warnHover, errorHover |
 | linkOne | fadeIn, ready, fadeOut | success, info, warn, error, successHover, infoHover, warnHover, errorHover |
+| linkTwo | fadeIn, ready, fadeOut | success, info, warn, error, successHover, infoHover, warnHover, errorHover |
 
 
 Box Elements
