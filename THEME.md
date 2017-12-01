@@ -17,10 +17,10 @@ Box Elements
 |---------|----------|-------------|
 | outlet | normal | base |
 | wrapper | fadeIn, ready, fadeOut | base |
-| left | fadeIn, ready, fadeOut | base |
-| right | fadeIn, ready, fadeOut | base |
-| center | fadeIn, ready, fadeOut | base |
-| links | fadeIn, ready, fadeOut | base |
+| left | normal | base |
+| right | normal | base |
+| center | normal | base |
+| links | normal | base |
 
 
 Below you can see the theme provided by notification. You can easily extend one of the existing themes and change it to your needs. But do not forget to register it at the [`cloukitThemeService`](https://cloukit.github.io/#/guide/themeing).
