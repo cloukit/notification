@@ -72,4 +72,4 @@ export class Story01Component {
 }
 ```
 
-```
+For more complex examples the source code of the Demo Stories above.
