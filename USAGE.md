@@ -53,21 +53,21 @@ import {
 
 @Component({
   selector: 'demo',
-  template: `<buton (click)="addNotification()">add</button>`,
+  template: `<button (click)="addNotification()">add</button>`,
   styles: []
 })
-export class Story01Component {
+export class DemoComponent {
   constructor(private notificationService: CloukitNotificationService) {}
   addNotification() {
-    const self = this;
-    const notification = new CloukitNotification(
-      'Success',                        // title
-      'You clicked a button!',          // message
-      CloukitNotificationType.SUCCESS,  // type
-      null,                             // linkOne
-      null,                             // linkTwo
-      2000);                            // Optional: Autoclose after 2secs
-    self.notificationService.addNotification(notification);
+    this.notificationService.addNotification(
+      new CloukitNotification(
+        'Success',                        // title
+        'You clicked a button!',          // message
+        CloukitNotificationType.SUCCESS,  // type
+        null,                             // linkOne
+        null,                             // linkTwo
+        2000                              // Optional: Autoclose after 2secs
+    ));
   }
 }
 ```
