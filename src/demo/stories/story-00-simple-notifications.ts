@@ -1,10 +1,11 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { DemoComponent } from '../demo.component';
 import {
   CloukitNotificationService,
   CloukitNotification,
   CloukitNotificationType,
-  CloukitNotificationLink
+  CloukitNotificationLink,
+  CloukitNotificationAction,
 } from '../../index';
 
 @Component({
@@ -16,32 +17,92 @@ export class Story00Component {
 
   constructor(private notificationService: CloukitNotificationService) {}
 
-  addNotification() {
-    const random = this._randomInt(0, 6);
-    const event = new EventEmitter<void>();
-    event.subscribe(() => {
-      console.log('you clicked');
+  success: CloukitNotification;
+  successEventLog: number[] = [];
+
+  warn: CloukitNotification;
+  warnEventLog: number[] = [];
+
+  error: CloukitNotification;
+  errorEventLog: number[] = [];
+
+  info: CloukitNotification;
+  infoEventLog: number[] = [];
+
+  openSuccess() {
+    const self = this;
+    self.success = new CloukitNotification('Success',
+      'You clicked a button!',
+      CloukitNotificationType.SUCCESS,
+      new CloukitNotificationLink('Ok'),
+      new CloukitNotificationLink('who cares'));
+    self.success.getActions().subscribe(action => {
+      self.successEventLog = [action].concat(self.successEventLog);
+      if (CloukitNotification.isCloseAction(action)) { self.success = null; }
     });
-    let dummyNotification: CloukitNotification;
-    if (random === 0) dummyNotification = new CloukitNotification('Atención', 'Los pantalones estan pequeños',
-      CloukitNotificationType.WARN, new CloukitNotificationLink('foo', event), null);
-    if (random === 1) dummyNotification = new CloukitNotification('Note', 'You should drink 2-3 liters a day',
-      CloukitNotificationType.INFO, new CloukitNotificationLink('Tell me more', event),
-      new CloukitNotificationLink('naaaah', event));
-    if (random === 2) dummyNotification = new CloukitNotification('Warn', 'Sugar is unhealthy!',
-      CloukitNotificationType.ERROR, null, null);
-    if (random === 3) dummyNotification = new CloukitNotification('Info', 'Sport is healthy.',
-      CloukitNotificationType.INFO, null, null);
-    if (random === 4) dummyNotification = new CloukitNotification('Success', 'You clicked a button!',
-      CloukitNotificationType.SUCCESS, new CloukitNotificationLink('foo', event), null);
-    if (random === 5) dummyNotification = new CloukitNotification('Ok', 'all fine!',
-      CloukitNotificationType.SUCCESS, new CloukitNotificationLink('foo', event), null);
-    this.notificationService.addNotification(dummyNotification);
+    self.notificationService.addNotification(this.success);
+  }
+  closeSuccess() {
+    this.success.forceClose();
   }
 
-  _randomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
+  openInfo() {
+    const self = this;
+    self.info = new CloukitNotification('Info',
+      'Sport is healthy.',
+      CloukitNotificationType.INFO,
+      new CloukitNotificationLink('ok'),
+      new CloukitNotificationLink('naaaah'));
+    self.info.getActions().subscribe(action => {
+      self.infoEventLog = [action].concat(self.infoEventLog);
+      if (CloukitNotification.isCloseAction(action)) { self.info = null; }
+    });
+    self.notificationService.addNotification(this.info);
   }
+  closeInfo() {
+    this.info.forceClose();
+  }
+
+  openWarn() {
+    const self = this;
+    self.warn = new CloukitNotification('Atención',
+      'Los pantalones estan pequeños!',
+      CloukitNotificationType.WARN,
+      new CloukitNotificationLink('confirmar'),
+      new CloukitNotificationLink('cancelar'));
+    self.warn.getActions().subscribe(action => {
+      self.warnEventLog = [action].concat(self.warnEventLog);
+      if (CloukitNotification.isCloseAction(action)) { self.warn = null; }
+    });
+    self.notificationService.addNotification(this.warn);
+  }
+  closeWarn() {
+    this.warn.forceClose();
+  }
+
+  openError() {
+    const self = this;
+    self.error = new CloukitNotification('Warn',
+      'Too much sugar is unhealthy!',
+      CloukitNotificationType.ERROR,
+      new CloukitNotificationLink('ok'),
+      new CloukitNotificationLink('nbd'));
+    self.error.getActions().subscribe(action => {
+      self.errorEventLog = [action].concat(self.errorEventLog);
+      if (CloukitNotification.isCloseAction(action)) { self.error = null; }
+    });
+    self.notificationService.addNotification(this.error);
+  }
+  closeError() {
+    this.error.forceClose();
+  }
+
+  translateEventLog(type: number) {
+    if (type === CloukitNotificationAction.CLOSE_ICON_CLICKED) return 'close icon clicked';
+    if (type === CloukitNotificationAction.LINK_TWO_CLICKED) return 'link two clicked';
+    if (type === CloukitNotificationAction.LINK_ONE_CLICKED) return 'link one clicked';
+    if (type === CloukitNotificationAction.CLOSE_BY_FORCE) return 'close by force';
+    if (type === CloukitNotificationAction.CLOSE_BY_TIME) return 'close by time';
+  }
+
 }

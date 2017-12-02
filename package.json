@@ -2,7 +2,7 @@
   "COMMENT": "THIS FILE WILL BE PARSED DURING BUILD. IT IS NOT THE ACTUAL PACKAGE FILE PUSHED TO NPMJS!",
   "name": "@cloukit/notification",
   "moduleId": "notification",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Show success, error, info and warn notifications on the page",
   "license": "MIT",
   "author": "codelcou.io",

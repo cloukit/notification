@@ -14,5 +14,16 @@ export class DemoComponent {
     '.superButtonSecondary { border-color: rgb(164, 227, 254); background-color:rgb(164, 227, 254); }',
     '.superButtonSecondary:hover { border-color:rgb(164, 227, 254); background-color:#fff; color:rgb(164, 227, 254);  }',
     '.superButton:disabled, .superButtonSecondary:disabled { border-color:#777; background-color:#777; color:#fff; cursor:not-allowed;  }',
+    '.row { display: flex }',
+    '.col { flex: 1 }',
+    `.eventLog { display:flex; flex-direction: column; padding: 10px; 
+                 margin:10px 20px 10px 0; overflow-y: scroll;
+                 height:100px; background-color: #efefef; }`,
+    '.eventLogEntry { padding: 5px; }',
+    '.eventLogEntry-1 { border-left:8px solid #FE8A29; color: #FE8A29; }',
+    '.eventLogEntry-2 { border-left:8px solid #FE2929; color: #FE2929;}',
+    '.eventLogEntry-3 { border-left:8px solid #21CC21; color: #21CC21;}',
+    '.eventLogEntry-4 { border-left:8px solid #189999; color: #189999;}',
+    '.eventLogEntry-5 { border-left:8px solid #CC2182; color: #CC2182;}',
   ]
 }

@@ -1,5 +1,83 @@
-<button
-  type="button"
-  class="superButton"
-  (click)="addNotification()"
->add notification</button>
+<div class="row">
+  <div class="col">
+    <button
+      type="button"
+      class="superButton"
+      (click)="openSuccess()"
+      [disabled]="success && !success?.actions.closed"
+    >add success</button>
+    <button
+      type="button"
+      class="superButtonSecondary"
+      (click)="closeSuccess()"
+      [disabled]="!success || success?.actions.closed"
+    >close success</button>
+    <div class="eventLog">
+      <div
+        class="eventLogEntry eventLogEntry-{{entry}}"
+        *ngFor="let entry of successEventLog"
+        >{{translateEventLog(entry)}}</div>
+    </div>
+  </div>
+  <div class="col">
+    <button
+      type="button"
+      class="superButton"
+      (click)="openInfo()"
+      [disabled]="info && !info?.actions.closed"
+    >add info</button>
+    <button
+      type="button"
+      class="superButtonSecondary"
+      (click)="closeInfo()"
+      [disabled]="!info || info?.actions.closed"
+    >close info</button>
+    <div class="eventLog">
+      <div
+        class="eventLogEntry eventLogEntry-{{entry}}"
+        *ngFor="let entry of infoEventLog"
+      >{{translateEventLog(entry)}}</div>
+    </div>
+  </div>
+  <div class="col">
+    <button
+      type="button"
+      class="superButton"
+      (click)="openWarn()"
+      [disabled]="warn && !warn?.actions.closed"
+    >add warn</button>
+    <button
+      type="button"
+      class="superButtonSecondary"
+      (click)="closeWarn()"
+      [disabled]="!warn || warn?.actions.closed"
+    >close warn</button>
+    <div class="eventLog">
+      <div
+        class="eventLogEntry eventLogEntry-{{entry}}"
+        *ngFor="let entry of warnEventLog"
+      >{{translateEventLog(entry)}}</div>
+    </div>
+  </div>
+  <div class="col">
+    <button
+      type="button"
+      class="superButton"
+      (click)="openError()"
+      [disabled]="error && !error?.actions.closed"
+    >add error</button>
+    <button
+      type="button"
+      class="superButtonSecondary"
+      (click)="closeError()"
+      [disabled]="!error || error?.actions.closed"
+    >close error</button>
+    <div class="eventLog">
+      <div
+        class="eventLogEntry eventLogEntry-{{entry}}"
+        *ngFor="let entry of errorEventLog"
+      >{{translateEventLog(entry)}}</div>
+    </div>
+  </div>
+</div>
+

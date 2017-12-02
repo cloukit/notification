@@ -29,8 +29,7 @@ export class CloukitNotificationService {
     // FIXME: use placement
     request.placement = DropoutPlacement.FIX_BOTTOM_LEFT;
     request.zIndex = 300;
-    const dropoutRef = self.dropoutService.requestDropoutCreation(request);
-    // FIXME: destroy
+    self.dropoutService.requestDropoutCreation(request);
   }
 
   public addNotification(notification: CloukitNotification) {

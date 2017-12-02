@@ -6,13 +6,15 @@ import { CloukitNotificationModule } from '../index';
 import { DemoComponent } from './demo.component';
 import demoStoriesSource from '../assets/demoStoriesSource.json';
 import { CloukitStoryModule, CloukitStoryService } from '@cloukit/story';
-import { Story00Component } from 'demo/stories/story-00-simple-notifications';
+import { Story00Component } from './stories/story-00-simple-notifications';
+import { Story01Component } from './stories/story-01-timed-notifications';
 
 
 @NgModule({
   declarations: [
     DemoComponent,
     Story00Component,
+    Story01Component,
   ],
   exports: [ DemoComponent ],
   imports: [

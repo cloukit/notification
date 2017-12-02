@@ -3,12 +3,15 @@
  * Copyright (c) 2017 Bernhard Grünewaldt - codeclou.io
  * https://github.com/cloukit/legal
  */
-import { Component, Input, Output, EventEmitter, OnInit, OnChanges } from '@angular/core';
-import { CloukitNotification, CloukitNotificationType } from '../notification.model';
+import { Component, Input, Output, EventEmitter, OnInit, OnChanges, OnDestroy } from '@angular/core';
+import { CloukitNotification, CloukitNotificationAction, CloukitNotificationType } from '../notification.model';
 import {
   CloukitComponentTheme, CloukitStatefulAndModifierAwareElementThemeStyleDefinition,
   CloukitThemeService,
 } from '@cloukit/theme';
+import { isNullOrUndefined } from 'util';
+import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/operator/takeUntil';
 
 @Component({
   selector: 'cloukit-notification',
@@ -41,7 +44,7 @@ import {
             type="button"
             *ngIf="notification.linkOne"
             [ngStyle]="getStyle('linkOne').style"
-            (click)="notification.linkOne.event.emit()"
+            (click)="clickLinkOne()"
             (mouseenter)="toggleHover('linkOne')"
             (mouseleave)="toggleHover('linkOne')"
           >{{notification.linkOne.title}}</button>
@@ -49,7 +52,7 @@ import {
             type="button"
             *ngIf="notification.linkTwo"
             [ngStyle]="getStyle('linkTwo').style"
-            (click)="notification.linkTwo.event.emit()"
+            (click)="clickLinkTwo()"
             (mouseenter)="toggleHover('linkTwo')"
             (mouseleave)="toggleHover('linkTwo')"
           >{{notification.linkTwo.title}}</button>
@@ -57,7 +60,7 @@ import {
       </div>
       <div [ngStyle]="getStyle('right').style">
         <svg
-          (click)="doClose()"
+          (click)="clickCloseIcon()"
           (mouseenter)="toggleHover('closeIcon')"
           (mouseleave)="toggleHover('closeIcon')"
           viewBox="0 0 512 512"
@@ -73,7 +76,7 @@ import {
   </div>`,
   styles: [],
 })
-export class CloukitNotificationComponent implements OnInit, OnChanges {
+export class CloukitNotificationComponent implements OnInit, OnChanges, OnDestroy {
 
   @Input()
   public themeSelected: CloukitComponentTheme;
@@ -83,6 +86,8 @@ export class CloukitNotificationComponent implements OnInit, OnChanges {
   public index: number;
   @Output()
   public close = new EventEmitter<number>();
+
+  private preDestroy = new Subject<boolean>();
 
   constructor(private themeService: CloukitThemeService) { }
 
@@ -140,10 +145,20 @@ export class CloukitNotificationComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     const self = this;
+    self.notification
+      .getActions()
+      .takeUntil(self.preDestroy)
+      .subscribe(action => {
+        if (action === CloukitNotificationAction.CLOSE_BY_FORCE) {
+          self.doClose();
+        }
+      });
     setTimeout(() => {
       self.state.wrapper.uiState = 'ready'
     }, 50);
-
+    if (!isNullOrUndefined(self.notification.destroyAfterMilliSeconds) && self.notification.destroyAfterMilliSeconds > 0) {
+      setTimeout(() => self.closeByTime(), self.notification.destroyAfterMilliSeconds);
+    }
     const uiModifierByType = self.notificationTypeToUiModifier(self.notification.type);
     self.state.statusIcon.uiModifier = uiModifierByType;
     self.state.title.uiModifier = uiModifierByType;
@@ -164,6 +179,13 @@ export class CloukitNotificationComponent implements OnInit, OnChanges {
     }
   }
 
+  ngOnDestroy() {
+    if (this.preDestroy !== undefined && this.preDestroy !== null) {
+      this.preDestroy.next(true);
+      this.preDestroy.complete();
+    }
+  }
+
   private notificationTypeToUiModifier(type: CloukitNotificationType) {
     if (type === CloukitNotificationType.ERROR) return 'error';
     if (type === CloukitNotificationType.INFO) return 'info';
@@ -171,8 +193,24 @@ export class CloukitNotificationComponent implements OnInit, OnChanges {
     if (type === CloukitNotificationType.SUCCESS) return 'success';
   }
 
+  public closeByTime() {
+    const self = this;
+    self.notification.timedClose();
+    self.doClose();
+  }
+
+  public clickCloseIcon() {
+    const self = this;
+    self.notification.clickClose();
+    self.doClose();
+  }
+
   public doClose() {
-    this.close.emit(this.index);
+    const self = this;
+    self.state.wrapper.uiState = 'fadeOut';
+    setTimeout(() => {
+      self.close.emit(this.index);
+    }, 500);
   }
 
   public toggleHover(el: string) {
@@ -182,6 +220,14 @@ export class CloukitNotificationComponent implements OnInit, OnChanges {
     } else {
       this.state[el].uiModifier = `${modifier}Hover`;
     }
+  }
+
+  public clickLinkOne() {
+    this.notification.clickLinkOne();
+  }
+
+  public clickLinkTwo() {
+    this.notification.clickLinkTwo();
   }
 
   public getStyle(element: string): CloukitStatefulAndModifierAwareElementThemeStyleDefinition {

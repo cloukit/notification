@@ -101,9 +101,19 @@ export class CloukitNotificationComponentThemeDefault extends CloukitComponentTh
         }
       } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
     this.createStyle('wrapper', 'fadeOut', 'latest',
-      this.merge(this.getStyle('wrapper', 'fadeIn', 'latest'), {
+      this.merge(this.getStyle('wrapper', 'ready', 'latest'), {
         style: {
-
+          opacity: 0,
+          zIndex: 10000,
+          margin: '10px 800px 10px -800px',
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
+    this.createStyle('wrapper', 'fadeOut', 'latestPlusOne',
+      this.merge(this.getStyle('wrapper', 'ready', 'latestPlusOne'), {
+        style: {
+          opacity: 0,
+          zIndex: 10000,
+          margin: '10px 800px 10px -800px',
         }
       } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
 

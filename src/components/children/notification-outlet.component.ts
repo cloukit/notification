@@ -65,7 +65,6 @@ export class CloukitNotificationOutletComponent implements AfterContentInit, OnD
   }
 
   doClose(index: number) {
-    console.log(index);
     this.notifications.splice(index, 1)
   }
 
