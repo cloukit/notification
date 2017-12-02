@@ -12,7 +12,7 @@ First of all you need to define the `cloukit-dropout-outlet` and the `cloukit-no
 
 The import the the needed modules in your main module like so.
 
-```
+```typescript
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CloukitDropoutModule } from '@cloukit/dropout';
