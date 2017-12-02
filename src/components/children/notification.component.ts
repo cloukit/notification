@@ -16,7 +16,7 @@ import 'rxjs/add/operator/takeUntil';
 @Component({
   selector: 'cloukit-notification',
   template: `
-  <div [ngStyle]="getStyle('wrapper').style" [style.zIndex]="10000 - index">
+  <div [ngStyle]="getStyle('wrapper').style" [style.zIndex]="getStyle('wrapper').style.zIndex - index">
     <div [ngStyle]="getStyle('notification').style">
       <div [ngStyle]="getStyle('left').style">
         <svg

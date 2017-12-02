@@ -116,7 +116,14 @@ export class CloukitNotificationComponentThemeDefault extends CloukitComponentTh
           margin: '10px 800px 10px -800px',
         }
       } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
-
+    this.createStyle('wrapper', 'fadeOut', 'latestPlusN',
+      this.merge(this.getStyle('wrapper', 'ready', 'latestPlusN'), {
+        style: {
+          opacity: 0,
+          zIndex: 10000,
+          margin: '10px 800px 10px -800px',
+        }
+      } as CloukitStatefulAndModifierAwareElementThemeStyleDefinition));
 
     //
     // notification
