@@ -3,7 +3,9 @@ This graphic shows you all elements and how they are composed together. The Box 
 
 cloukitSvg:https://cloukit.github.io/notification/doc/cloukit-notification-decomposed.svg
 
-Visual Elements
+&nbsp;
+
+### Visual Elements
 
 | Element | UI States | UI Modifiers |
 |---------|----------|-------------|
@@ -15,8 +17,9 @@ Visual Elements
 | linkOne | ready | success, info, warn, error, successHover, infoHover, warnHover, errorHover |
 | linkTwo | ready | success, info, warn, error, successHover, infoHover, warnHover, errorHover |
 
+&nbsp;
 
-Box Elements
+### Box Elements
 
 | Element | UI States | UI Modifiers |
 |---------|----------|-------------|
@@ -29,14 +32,17 @@ Box Elements
 | center | ready | base |
 | links | ready | base |
 
-Note that the **wrapper** has some special UI States and Modifiers. The Animation flow starts with  `fadeIn` and transitions after a short time to `ready`.
-On close the UI State changes tp `fadeOut` before the component is destroyed
+Note that the **wrapper** has some special UI States and Modifiers. The Animation flow starts with  `fadeIn` and transitions after a short time to `ready`. On close the UI State changes tp `fadeOut` before the component is destroyed.
 
+The UI States on on `wrapper+ready` go from `latest` over `latestPlusOne` to `latestPlusN`. Meaning `latest` is the topmost notification, `latestPlusOne` is the second notification below and `latestPlusN` are all further notifications currently not in viewport.
 
+&nbsp;
 
-Below you can see the theme provided by notification. You can easily extend one of the existing themes and change it to your needs. But do not forget to register it at the [`cloukitThemeService`](https://cloukit.github.io/#/guide/themeing).
+### Write your own Theme
 
-A new theme with a red background would be created like so:
+Below you can see the provided default theme. You can easily extend the default theme and change it to your needs. But do not forget to register it at the [`cloukitThemeService`](https://cloukit.github.io/#/guide/themeing).
+
+A new theme with a red background for the error notification could be created like so:
 
 ```typescript
 import { CloukitNotificationComponentThemeDefault } from '@cloukit/tooltip';
@@ -44,7 +50,7 @@ import { CloukitNotificationComponentThemeDefault } from '@cloukit/tooltip';
 export class MyRedNotificationTheme extends CloukitNotificationComponentThemeDefault {
   constructor() {
     super();
-    const tooltip = this.getElementTheme('wrapper', 'ready', 'error');
+    const tooltip = this.getElementTheme('notification', 'ready', 'error');
     tooltip.styleDef.style.backgroundColor = 'red';
   }
 }
