@@ -72,4 +72,4 @@ export class DemoComponent {
 }
 ```
 
-For more complex examples the source code of the Demo Stories above.
+For more complex examples see the source code of the Demo Stories above.
