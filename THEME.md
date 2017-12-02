@@ -32,7 +32,7 @@ cloukitSvg:https://cloukit.github.io/notification/doc/cloukit-notification-decom
 | center | ready | base |
 | links | ready | base |
 
-Note that the **wrapper** has some special UI States and Modifiers. The Animation flow starts with  `fadeIn` and transitions after a short time to `ready`. On close the UI State changes tp `fadeOut` before the component is destroyed.
+Note that the **wrapper** has some special UI States and Modifiers. The Animation flow starts with  `fadeIn` and transitions after a short time to `ready`. On close the UI State changes to `fadeOut` before the component is destroyed.
 
 The UI States on on `wrapper+ready` go from `latest` over `latestPlusOne` to `latestPlusN`. Meaning `latest` is the topmost notification, `latestPlusOne` is the second notification below and `latestPlusN` are all further notifications currently not in viewport.
 
