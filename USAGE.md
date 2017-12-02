@@ -12,7 +12,7 @@ First of all you need to define the `cloukit-dropout-outlet` and the `cloukit-no
 ></cloukit-notification-outlet-loader>
 ```
 
-Then import the the needed modules in your main module like so.
+Then import the needed modules in your main module.
 
 ```typescript
 import { NgModule } from '@angular/core';
