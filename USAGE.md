@@ -1,4 +1,4 @@
-First of all you need to define the `cloukit-dropout-outlet` and the `cloukit-notification-outlet-loader` in your main Bootstrap Component's template like so. Make sure you only define this once at the top level your component hierarchy.
+First of all you need to define the `cloukit-dropout-outlet` and the `cloukit-notification-outlet-loader` in your main Bootstrap Component's template like so. Make sure you only define this once at the top level of your component hierarchy.
 
 ```html
 <cloukit-dropout-outlet></cloukit-dropout-outlet>
