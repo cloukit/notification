@@ -1,7 +1,7 @@
 To be able to write a custom theme you need to know about the elements, uiStates and uiModifiers.
 This graphic shows you all elements and how they are composed together. The Box Elements are composed together by flexbox.
 
-cloukitSvg:https://cloukit.github.io/notification/doc/cloukit-notification-decomposed.svg
+cloukitSvg:https://cloukit.github.io/notification/themeing/cloukit-notification-decomposed.svg
 
 &nbsp;
 
