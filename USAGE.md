@@ -1,3 +1,6 @@
+<!-- !!! will be dynamically included into cloukit.github.io component doc !!! -->
+<!-- !!! DO NOT USE UNECESSARY MARRKUP THAT BREAKS THE CORPORATE DESIGN !!! -->
+
 ### Initial Setup
 
 First of all you need to define the `cloukit-dropout-outlet` and the `cloukit-notification-outlet-loader` in your main Bootstrap Component's template like so. Make sure you only define this once at the top level of your component hierarchy.
