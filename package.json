@@ -2,7 +2,7 @@
   "COMMENT": "THIS FILE WILL BE PARSED DURING BUILD. IT IS NOT THE ACTUAL PACKAGE FILE PUSHED TO NPMJS!",
   "name": "@cloukit/notification",
   "moduleId": "notification",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Show success, error, info and warn notifications on the page",
   "license": "MIT",
   "author": "codelcou.io",
@@ -18,17 +18,17 @@
     "test": "echo \"ok\""
   },
   "dependencies": {
-    "@cloukit/icon": ">=1.4.0",
-    "@cloukit/dropout": ">=1.4.0",
-    "@cloukit/theme": ">=1.6.1"
+    "@cloukit/icon": ">=1.5.0",
+    "@cloukit/dropout": ">=1.6.0",
+    "@cloukit/theme": ">=1.7.0"
   },
   "devDependencies": {
-    "@cloukit/library-build-chain": "1.15.0",
-    "@cloukit/story": "1.2.0"
+    "@cloukit/library-build-chain": "1.17.1",
+    "@cloukit/story": "1.3.1"
   },
   "peerDependencies": {
-    "@angular/common": ">=4.0.0",
-    "@angular/core": ">=4.0.0",
+    "@angular/common": ">=5.0.0",
+    "@angular/core": ">=5.0.0",
     "rxjs": ">=5.0.0",
     "zone.js": ">=0.8.0"
   }

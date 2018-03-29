@@ -6,7 +6,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CloukitThemeService } from '@cloukit/theme';
-import { CloukitDropoutModule } from '@cloukit/dropout';
 import { CloukitNotificationService } from './services/notification.service';
 import { CloukitNotificationOutletLoaderComponent } from './children/notification-outlet-loader.component';
 import { CloukitNotificationOutletComponent } from './children/notification-outlet.component';
@@ -14,7 +13,7 @@ import { CloukitNotificationComponent } from './children/notification.component'
 import { CloukitNotificationComponentThemeDefault } from './notification.theme';
 
 @NgModule({
-  imports: [ CommonModule, CloukitDropoutModule ],
+  imports: [ CommonModule ],
   exports: [
     CloukitNotificationOutletLoaderComponent,
     CloukitNotificationOutletComponent,
