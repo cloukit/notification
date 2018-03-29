@@ -33,8 +33,8 @@ import { CloukitNotificationModule } from '@cloukit/notification';
     CommonModule,
     // (2) Register Imports
     CloukitThemeModule,
-    CloukitNotificationModule,
     CloukitDropoutModule,
+    CloukitNotificationModule,    
   ],
   providers: [ ],
   bootstrap: [ AppComponent ],
@@ -81,3 +81,23 @@ export class DemoComponent {
 ```
 
 For more complex examples see the source code of the Demo Stories above.
+
+
+&nbsp;
+
+### Version Compatibility
+
+You can read the [release comments](https://github.com/cloukit/notification/releases) for full details.
+
+Please mind the the compatibility chart
+
+| Angular Version | Cloukit Component Version |
+|-----------------|---------------------------|
+| >=5.0.0         | 1.2.0 - current           |
+| >=4.0.0         | 1.0.0 - 1.1.1             |
+
+To install a specific version use:
+
+```
+yarn add @cloukit/notification@1.1.1
+```
