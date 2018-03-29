@@ -3,7 +3,7 @@
 
 ### Initial Setup
 
-First of all you need to define the `cloukit-dropout-outlet` and the `cloukit-notification-outlet-loader` in your main Bootstrap Component's template like so. Make sure you only define this once at the top level of your component hierarchy.
+First of all you need to define the [**`cloukit-dropout-outlet`**](https://cloukit.github.io/#/component/dropout) and the `cloukit-notification-outlet-loader` in your main Bootstrap Component's template like so. Make sure you only define this once at the top level of your component hierarchy.
 
 ```html
 <cloukit-dropout-outlet></cloukit-dropout-outlet>
@@ -20,8 +20,9 @@ Then import the needed modules in your main module.
 ```typescript
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CloukitDropoutModule } from '@cloukit/dropout';
+// (1) Package Imports
 import { CloukitThemeModule } from '@cloukit/theme';
+import { CloukitDropoutModule } from '@cloukit/dropout';
 import { CloukitNotificationModule } from '@cloukit/notification';
 
 @NgModule({
@@ -30,6 +31,7 @@ import { CloukitNotificationModule } from '@cloukit/notification';
   ],
   imports: [
     CommonModule,
+    // (2) Register Imports
     CloukitThemeModule,
     CloukitNotificationModule,
     CloukitDropoutModule,
@@ -60,7 +62,9 @@ import {
   styles: []
 })
 export class DemoComponent {
+
   constructor(private notificationService: CloukitNotificationService) {}
+  
   addNotification() {
     this.notificationService.addNotification(
       new CloukitNotification(
@@ -72,6 +76,7 @@ export class DemoComponent {
         2000                              // Optional: Autoclose after 2secs
     ));
   }
+  
 }
 ```
 
