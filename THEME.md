@@ -40,7 +40,7 @@ The UI States on on `wrapper+ready` go from `latest` over `latestPlusOne` to `la
 
 ### Write your own Theme
 
-Below you can see the provided default theme. You can easily extend the default theme and change it to your needs. But do not forget to register it at the [`cloukitThemeService`](https://cloukit.github.io/#/guide/themeing).
+Below you can see the provided default theme. You can easily extend the default theme and change it to your needs. But do not forget to register it at the [`CloukitThemeService`](https://cloukit.github.io/#/guide/themeing).
 
 A new theme with a red background for the error notification could be created like so:
 
