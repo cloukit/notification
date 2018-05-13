@@ -3,7 +3,13 @@
 
 ### Initial Setup
 
-First of all you need to define the [**`cloukit-dropout-outlet`**](https://cloukit.github.io/#/component/dropout) and the `cloukit-notification-outlet-loader` in your main Bootstrap Component's template like so. Make sure you only define this once at the top level of your component hierarchy.
+First install needed peerDependencies.
+
+```
+yarn add @cloukit/icon @cloukit/dropout @cloukit/theme
+````
+
+Secondly you need to define the [**`cloukit-dropout-outlet`**](https://cloukit.github.io/#/component/dropout) and the `cloukit-notification-outlet-loader` in your main Bootstrap Component's template like so. Make sure you only define this once at the top level of your component hierarchy.
 
 ```html
 <cloukit-dropout-outlet></cloukit-dropout-outlet>
