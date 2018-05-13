@@ -1,0 +1,83 @@
+<div class="row">
+  <div class="col">
+    <button
+      type="button"
+      class="superButton"
+      (click)="openSuccess()"
+      [disabled]="success && !successClosed"
+    >add success</button>
+    <button
+      type="button"
+      class="superButtonSecondary"
+      (click)="closeSuccess()"
+      [disabled]="!success || successClosed"
+    >close</button>
+    <div class="eventLog">
+      <div
+        class="eventLogEntry eventLogEntry-{{entry}}"
+        *ngFor="let entry of successEventLog"
+        >{{translateEventLog(entry)}}</div>
+    </div>
+  </div>
+  <div class="col">
+    <button
+      type="button"
+      class="superButton"
+      (click)="openInfo()"
+      [disabled]="info && !infoClosed"
+    >add info</button>
+    <button
+      type="button"
+      class="superButtonSecondary"
+      (click)="closeInfo()"
+      [disabled]="!info || infoClosed"
+    >close</button>
+    <div class="eventLog">
+      <div
+        class="eventLogEntry eventLogEntry-{{entry}}"
+        *ngFor="let entry of infoEventLog"
+      >{{translateEventLog(entry)}}</div>
+    </div>
+  </div>
+  <div class="col">
+    <button
+      type="button"
+      class="superButton"
+      (click)="openWarn()"
+      [disabled]="warn && !warnClosed"
+    >add warn</button>
+    <button
+      type="button"
+      class="superButtonSecondary"
+      (click)="closeWarn()"
+      [disabled]="!warn || warnClosed"
+    >close</button>
+    <div class="eventLog">
+      <div
+        class="eventLogEntry eventLogEntry-{{entry}}"
+        *ngFor="let entry of warnEventLog"
+      >{{translateEventLog(entry)}}</div>
+    </div>
+  </div>
+  <div class="col">
+    <button
+      type="button"
+      class="superButton"
+      (click)="openError()"
+      [disabled]="error && !errorClosed"
+    >add error</button>
+    <button
+      type="button"
+      class="superButtonSecondary"
+      (click)="closeError()"
+      [disabled]="!error || errorClosed"
+    >close</button>
+    <div class="eventLog">
+      <div
+        class="eventLogEntry eventLogEntry-{{entry}}"
+        *ngFor="let entry of errorEventLog"
+      >{{translateEventLog(entry)}}</div>
+    </div>
+  </div>
+</div>
+
