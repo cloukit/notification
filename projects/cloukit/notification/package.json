@@ -1,11 +1,11 @@
 {
   "name": "@cloukit/notification",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
-    "@cloukit/icon": "^6.0.0",
-    "@cloukit/theme": "^6.0.0",
-    "@cloukit/dropout": "^6.0.0"
+    "@angular/common": "^7.0.0-rc.0 || ^7.0.0",
+    "@angular/core": "^7.0.0-rc.0 || ^7.0.0",
+    "@cloukit/icon": "^7.0.0",
+    "@cloukit/theme": "^7.1.1",
+    "@cloukit/dropout": "^7.0.0"
   }
 }
